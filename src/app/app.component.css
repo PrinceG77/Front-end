@@ -1,0 +1,11 @@
+.d-flex{
+  /*background-color: #03254c;*/
+  border-bottom: 2px solid lightgray;
+
+}
+header{
+
+}
+.clickable{
+  cursor: pointer;
+}
