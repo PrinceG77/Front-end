@@ -1,0 +1,144 @@
+body{
+  padding: 0%;
+  margin: 0%;
+  font-family: 'Lato';
+  /*font-weight: bold;*/
+}
+
+
+.navbar{
+  /*background-color: rgba(0, 0, 0, 0.3) !important;*/
+  /*background-image: linear-gradient(to right, #ffffff, #e8f5ff, #b5f1ff, #6defff, #12ebdf);*/
+
+}
+
+.navbar-brand{
+  font-family: 'Pacifico';
+  font-size: 35px;
+  color: lightcoral !important;
+
+}
+
+
+
+.nav-link{
+  font-size: 16px;
+  margin: 15px;
+  color: black !important;
+  font-family: 'Righteous';
+  position: relative;
+}
+.nav-link::after
+{
+  content: '';
+  height: 2px;
+  width: 0;
+  background: aqua;
+  /*display: block;*/
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  /*opacity: 0;*/
+  transition: width 0.5s;
+
+}
+
+.nav-link:hover::after
+{
+  /*opacity: 1;*/
+  width: 100%;
+  transition: width 0.5s;
+
+
+}
+
+.nav-link:hover
+{
+  color: aqua !important;
+  padding-bottom: 20px;
+  transition: 0.2s;
+
+
+}
+
+/* Line hover effect  */
+.active .nav-link::after
+{
+  color: aqua !important;
+  content: '';
+  height: 2px;
+  width: 100%;
+  display: block;
+  /*opacity: 1;*/
+
+}
+
+.active .nav-link
+{
+  color: aqua !important;
+
+
+}
+
+.menu-right-btn{
+  padding: 13px 46px;
+  margin-right: 4%;
+  font-family: 'Righteous';
+  background-color: transparent;
+  transition: all 300ms ease-in;
+  /*width: 200px;*/
+}
+
+.menu-right-btn:hover{
+  color: white;
+  background-color: red;
+}
+
+
+/*media queries */
+@media screen and (min-width:1000px) {
+
+  .dropdown:hover .dropdown-menu{
+    display: block;
+    margin-top: 0;
+    opacity: 1;
+    pointer-events: initial;
+
+
+
+  }
+  .dropdown .dropdown-menu {
+    display: block;
+    transition: all 0.8s;
+    opacity: 0;
+    background-color: white;
+    font-family: "Righteous";
+    width: 600px;
+    padding-left: 5%;
+    padding-top: 15%;
+    padding-bottom: 15%;
+    border-radius: 0;
+    /*margin-bottom: 5%;*/
+
+    pointer-events: none;
+
+    /*background-image: linear-gradient(to right, #ffffff, #e8f5ff, #b5f1ff, #6defff, #12ebdf);*/
+
+    /*background-image: linear-gradient(to right, #ffffff, #edd3f5, #f0a0d5, #f6659b, #eb124d);*/
+
+
+  }
+
+  .dropdown-item {
+
+    color: black;
+    background-color: white;
+    padding-bottom: 5%;
+  }
+
+  .dropdown-item:hover {
+
+    /*background-color: aqua;*/
+    color: aqua;
+  }
+}

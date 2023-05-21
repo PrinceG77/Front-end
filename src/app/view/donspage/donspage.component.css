@@ -1,0 +1,19 @@
+fieldset, legend {
+  all: revert;
+  font-family: "Ink Free";
+  font-weight: bold;
+}
+
+legend {
+
+
+  font-size: 2.5rem;
+  padding-left: 20px;
+  padding-right: 20px;
+
+}
+
+button{
+  font-family: "Ink Free";
+}
+

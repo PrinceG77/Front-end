@@ -1,0 +1,76 @@
+<div class="container mapBox">
+
+      <div class="full-width-div">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d7039.3935286097685!2d-5.663165153181194!3d32.94947668694383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzLCsDU2JzUzLjAiTiA1wrAzOScxOS4wIlc!5e0!3m2!1sfr!2sma!4v1684402903318!5m2!1sfr!2sma" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+  </div>
+
+</div>
+
+<div class="container mb-3 mt-5">
+
+  <div class="text-center mb-3 mt-3 contact-title">CONTACTEZ-NOUS</div>
+  <p class="mb-4">Vous voulez bénéficier de nos services ? vous avez une question ? une suggestion ?
+    Utilisez le formulaire ci-dessous, l’équipe de l'association Dar Al amane vous répondra dans les meilleurs délais :</p>
+
+  <form [formGroup]="contactFormGroup" (ngSubmit)="sendMessage()" class="mb-3">
+<div class="card-body">
+
+  <div class="row g-3 mb-3">
+    <div class="col mx-2">
+      <label  class="form-label">Nom, Prénom *</label>
+      <input type="text" class="form-control" formControlName = "noms">
+      <small *ngIf="contactFormGroup.controls['noms'].errors  &&
+        contactFormGroup.controls['noms'].touched" class="text-danger">{{getErrorMessage('Name',
+        contactFormGroup.controls['noms'].errors )}}</small>
+
+    </div>
+    <div class="col">
+     <!-- <div>{{contactFormGroup.controls['email'].errors|json}}</div>-->
+      <label  class="form-label">Email *</label>
+      <input type="email" class="form-control"  formControlName = "email">
+      <small *ngIf="contactFormGroup.controls['email'].errors  &&
+        contactFormGroup.controls['email'].touched" class="text-danger">{{getErrorMessage('Email',
+        contactFormGroup.controls['email'].errors )}}</small>
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col mx-2">
+      <label  class="form-label" >Objet</label>
+      <input type="text" class="form-control" formControlName = "objet" >
+    </div>
+    <div class="col">
+      <label  class="form-label">Téléphone *</label>
+      <input type="tel" class="form-control" formControlName = "telephone">
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <!--<p>{{contactFormGroup.value|json}}</p>-->
+    <div class="mb-3 mx-2">
+      <label for="exampleFormControlTextarea1" class="form-label">Message *</label>
+      <textarea class="form-control col-6" id="exampleFormControlTextarea1" rows="5" formControlName = "message"></textarea>
+      <small *ngIf="contactFormGroup.controls['message'].errors  &&
+        contactFormGroup.controls['message'].touched" class="text-danger">{{getErrorMessage('A message',
+        contactFormGroup.controls['message'].errors )}}</small>
+    </div>
+  </div>
+
+
+
+    </div>
+  <button type="submit" class="btn btn-outline-info mx-2  col-1 mb-3" [disabled]="!contactFormGroup.valid">Soumettre</button>
+  </form>
+  </div>
+
+
+
+
+
+
+
+
+
+
+

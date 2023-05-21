@@ -1,0 +1,81 @@
+
+<div class="container">
+
+  <form class="mb-3" [formGroup]="donFormGroup" (ngSubmit)="sendDonationForm();">
+    <fieldset style = "border : 2px solid red; border-radius : 5px">
+      <legend class="text-center">Mes coordonées</legend>
+     <!-- <div>{{donFormGroup.value|json}}</div>-->
+    <div class="mb-3 col-10 offset-1">
+      <label  class="form-label">Nom & Prénom:</label>
+      <input type="text" class="form-control" formControlName = "noms" required>
+      <small *ngIf="donFormGroup.controls['noms'].errors  &&
+        donFormGroup.controls['noms'].touched" class="text-danger">{{getErrorMessage(
+        donFormGroup.controls['noms'].errors )}}</small>
+    </div>
+
+      <div class="mb-3 col-10 offset-1">
+        <label  class="form-label">Email</label>
+        <input type="email" class="form-control" formControlName = "email" >
+        <small *ngIf="donFormGroup.controls['email'].errors  &&
+        donFormGroup.controls['email'].touched" class="text-danger">{{getErrorMessage(
+          donFormGroup.controls['email'].errors )}}</small>
+      </div>
+
+    <div class="mb-3 col-10 offset-1">
+      <label  class="form-label">Adresse:</label>
+      <input type="text" class="form-control" formControlName = "adresse" required>
+      <small *ngIf="donFormGroup.controls['adresse'].errors  &&
+        donFormGroup.controls['adresse'].touched" class="text-danger">{{getErrorMessage(
+        donFormGroup.controls['adresse'].errors )}}</small>
+    </div>
+
+      <div class="mb-3 col-10 offset-1">
+        <label  class="form-label">Téléphone:</label>
+        <input type="tel" class="form-control" formControlName = "telephone" required>
+        <small *ngIf="donFormGroup.controls['telephone'].errors  &&
+        donFormGroup.controls['telephone'].touched" class="text-danger">{{getErrorMessage(
+          donFormGroup.controls['telephone'].errors )}}</small>
+      </div>
+
+
+
+    <div class="mb-3 col-10 offset-1">
+      <label  class="form-label">Ville:</label>
+      <input type="text" class="form-control" formControlName = "ville" required>
+      <small *ngIf="donFormGroup.controls['ville'].errors  &&
+        donFormGroup.controls['ville'].touched" class="text-danger">{{getErrorMessage(
+        donFormGroup.controls['ville'].errors )}}</small>
+    </div>
+
+    <div class="mb-3 col-10 offset-1">
+      <label  class="form-label">Code postal:</label>
+      <input type="text" class="form-control" formControlName = "codePostal"  required>
+    </div>
+
+    <div class="mb-3 col-10 offset-1">
+      <label  class="form-label">Pays:</label>
+      <input type="text" class="form-control" formControlName = "pays"  required>
+      <small *ngIf="donFormGroup.controls['pays'].errors  &&
+        donFormGroup.controls['pays'].touched" class="text-danger">{{getErrorMessage(
+        donFormGroup.controls['pays'].errors )}}</small>
+    </div>
+
+      <div class="mb-5 col-10 offset-1">
+        <label  class="form-label">Montant du don (MAD)</label>
+        <input type="number" class="form-control" min="0" formControlName = "montantDon" required>
+        <small *ngIf="donFormGroup.controls['montantDon'].errors  &&
+        donFormGroup.controls['montantDon'].touched" class="text-danger">{{getErrorMessage(
+          donFormGroup.controls['montantDon'].errors )}}</small>
+      </div>
+
+
+    </fieldset>
+
+    <button class="btn btn-outline-danger mt-3 col-2 offset-5" [disabled]="donFormGroup.invalid">Soumettre</button>
+  </form>
+    </div>
+
+
+
+
+

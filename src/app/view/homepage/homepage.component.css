@@ -1,0 +1,65 @@
+
+.container-fluid {
+
+
+}
+
+
+
+/*
+.carousel-inner .carousel-item img{
+  max-height : 650px;
+  object-fit: cover;
+  width: 100%;
+  max-width: 100%;
+
+
+  /*border: 2px solid red ;*/
+/*}*/
+
+.c-item{
+ height: 600px;
+}
+
+.c-img{
+  height: 100%;
+  object-fit: cover;
+}
+.section-presentation{
+
+}
+.section-presentation p {
+  text-indent: 2rem;
+  text-align: justify;
+  font-family: "Roboto Condensed";
+  font-size: 1.2em;
+  color: black;
+
+}
+
+.section-presentation h1 {
+  font-family: "Ink Free";
+  font-weight: bold;
+  font-size: 3rem;
+  margin-bottom: 1%;
+  margin-top: 2%;
+  color : darkgreen;
+}
+
+
+.partenaire {
+
+}
+.partenaire img{
+
+
+}
+
+
+
+
+
+
+
+
+

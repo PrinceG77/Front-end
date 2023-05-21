@@ -1,0 +1,42 @@
+.title-image {
+  background: url("/assets/images/beneficiairesBG2.jpg") center no-repeat;
+  background-attachment: fixed;
+  background-size: 100% auto;
+  width: 100%;
+
+  /*border-top: 2px solid black;
+  border-bottom: 2px solid black;*/
+  height: 400px;
+
+}
+
+.title-image h1 {
+  font-weight: bold;
+  font-size: 5rem;
+  color: white;
+  padding-top: 7%;
+  font-family: 'Righteous';
+}
+
+.benificiaires h2 {
+
+  font-size: 3.5rem;
+  font-family: "Ink Free";
+  font-weight: bold;
+  border: 2px double violet;
+  /*
+    background-color: rgba(0,255,255, 0.1);
+    background-color: rgba(255,0,255, 0.1);*/
+  color: black;
+
+}
+
+.benificiaires p {
+
+  text-indent: 2rem;
+  text-align: justify;
+  font-family: "Roboto Condensed";
+  font-size: 1.2em;
+  color: black;
+
+}

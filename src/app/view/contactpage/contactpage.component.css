@@ -1,0 +1,39 @@
+.contact-title{
+  font-size: 3.1em;
+  font-family: 'Times New Roman';
+}
+
+p{
+  font-family: 'Times New Roman';
+  margin-left: 2%;
+}
+form{
+  font-family: 'Ink Free';
+  font-weight: bold;
+}
+.container-fluid{
+  width: 100%;
+
+}
+/*
+*{
+  margin : 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+*/
+
+
+
+
+.mapBox .full-width-div iframe{
+
+  object-fit: cover;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  max-height: 500px;
+}
+
+
+

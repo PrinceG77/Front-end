@@ -1,0 +1,47 @@
+.footer-page{
+  background-color: #03254c;
+  color: white;
+}
+
+.footer-page .nav-link{
+
+  color: white;
+  font-family: 'Roboto Light';
+
+}
+
+.footer-page .nav-link:hover{
+
+  color: aqua;
+
+
+}
+
+.centre-section{
+  text-align: justify;
+  font-family: "Roboto Light";
+}
+
+.info-section{
+
+  font-family: "Roboto Light";
+
+}
+.container .row{
+  margin-left: 150px;
+}
+
+.container .row h4{
+  font-family: "Righteous";
+  font-weight: bold;
+}
+
+.social i {
+  color:white;
+  font-size: 20px;
+}
+
+footer{
+  background-color: rgb(3, 37, 76, 0.9);
+  color: white;
+}

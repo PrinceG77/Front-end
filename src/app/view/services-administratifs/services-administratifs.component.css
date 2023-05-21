@@ -1,0 +1,76 @@
+.title-image {
+  background: url("/assets/images/administratif.jpg") center no-repeat;
+  background-size: 100% auto;
+  width: 100%;
+  background-attachment: fixed;
+  height: 400px;
+
+}
+
+.title-image h1 {
+  font-weight: bold;
+  font-size: 5rem;
+  color: white;
+  padding-top: 10%;
+  font-family: 'Righteous';
+}
+
+ h2 {
+
+  font-size: 3.5rem;
+  font-family: "Ink Free";
+  font-weight: bold;
+  border: 2px double violet;
+  /*
+    background-color: rgba(0,255,255, 0.1);
+    background-color: rgba(255,0,255, 0.1);*/
+  color: black;
+
+
+}
+
+.container p {
+  text-indent: 2rem;
+  text-align: justify;
+  font-family: "Roboto Condensed";
+  font-size: 1.2em;
+  color: black;
+
+  padding-left: 2%;
+  padding-right: 2%;
+
+
+}
+ .administration h4{
+   margin-top: 15%;
+   /*border: 2px solid black;*/
+ }
+
+ .directeur, .chefSuivi, .secretariat{
+   border: 2px solid black;
+
+ }
+
+ .adm{
+   margin-left: 10%;
+ }
+ .card{
+
+   margin-right: 10px;
+   max-width: 22rem;
+   margin-top: 25px;
+
+ }
+
+.card .card-header{
+
+  font-family: "Righteous";
+  font-weight: bold;
+  font-size: 1.5em;
+  color: violet;
+
+}
+
+.organigramme img{
+  margin-right: 50px;
+}
