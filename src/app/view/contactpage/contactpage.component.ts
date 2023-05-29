@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, ValidationErrors, Validators} from "@angular/forms";
+import {ContactService} from "../../services/contact.service";
 
 @Component({
   selector: 'app-contactpage',
@@ -10,13 +11,13 @@ export class ContactpageComponent implements OnInit{
 
   contactFormGroup! : FormGroup;
 
-  constructor(private fb : FormBuilder) {
+  constructor(private fb : FormBuilder, private contactService : ContactService) {
 
     this.contactFormGroup = this.fb.group({
       noms : this.fb.control(null , [Validators.required]),
       email : this.fb.control(null, [Validators.required, , Validators.email]),
       objet : this.fb.control(null),
-      telephone : this.fb.control(null),
+      telephone : this.fb.control(null , [Validators.required]),
       message : this.fb.control(null, [Validators.required]),
 
     });
@@ -34,7 +35,21 @@ export class ContactpageComponent implements OnInit{
 
     else return "";
   }
-  sendMessage() {
-    this.contactFormGroup.reset();
+
+
+  sendEmail(FormData : any) {
+
+   console.log(FormData);
+    this.contactService.sendEmail(FormData).subscribe(
+      response => {
+        location.href = 'https://mailthis.to/confirm'
+        this.contactFormGroup.reset();
+        //alert('Message envoyé avec succès');
+        console.log(response)
+      }, error => {
+        console.warn(error.responseText)
+        console.log({ error })
+      }
+    );
   }
 }

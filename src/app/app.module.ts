@@ -24,6 +24,7 @@ import { HistoireComponent } from './view/histoire/histoire.component';
 import { PartenairesComponent } from './view/partenaires/partenaires.component';
 import { ServicesAdministratifsComponent } from './view/services-administratifs/services-administratifs.component';
 import { FooterPageComponent } from './view/footer-page/footer-page.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { FooterPageComponent } from './view/footer-page/footer-page.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

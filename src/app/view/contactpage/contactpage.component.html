@@ -13,13 +13,13 @@
   <p class="mb-4">Vous voulez bénéficier de nos services ? vous avez une question ? une suggestion ?
     Utilisez le formulaire ci-dessous, l’équipe de l'association Dar Al amane vous répondra dans les meilleurs délais :</p>
 
-  <form [formGroup]="contactFormGroup" (ngSubmit)="sendMessage()" class="mb-3">
+  <form  [formGroup]="contactFormGroup" (ngSubmit)="sendEmail(contactFormGroup.value)"  class="mb-3">
 <div class="card-body">
 
   <div class="row g-3 mb-3">
     <div class="col mx-2">
       <label  class="form-label">Nom, Prénom *</label>
-      <input type="text" class="form-control" formControlName = "noms">
+      <input type="text" class="form-control" formControlName = "noms" name="nom complet">
       <small *ngIf="contactFormGroup.controls['noms'].errors  &&
         contactFormGroup.controls['noms'].touched" class="text-danger">{{getErrorMessage('Name',
         contactFormGroup.controls['noms'].errors )}}</small>
@@ -28,7 +28,7 @@
     <div class="col">
      <!-- <div>{{contactFormGroup.controls['email'].errors|json}}</div>-->
       <label  class="form-label">Email *</label>
-      <input type="email" class="form-control"  formControlName = "email">
+      <input type="email" class="form-control"  formControlName = "email" name="email">
       <small *ngIf="contactFormGroup.controls['email'].errors  &&
         contactFormGroup.controls['email'].touched" class="text-danger">{{getErrorMessage('Email',
         contactFormGroup.controls['email'].errors )}}</small>
@@ -38,11 +38,14 @@
   <div class="row g-3 mb-3">
     <div class="col mx-2">
       <label  class="form-label" >Objet</label>
-      <input type="text" class="form-control" formControlName = "objet" >
+      <input type="text" class="form-control" formControlName = "objet" objet="nom complet">
     </div>
     <div class="col">
       <label  class="form-label">Téléphone *</label>
-      <input type="tel" class="form-control" formControlName = "telephone">
+      <input type="tel" class="form-control" formControlName = "telephone" name="telephone">
+      <small *ngIf="contactFormGroup.controls['telephone'].errors  &&
+        contactFormGroup.controls['telephone'].touched" class="text-danger">{{getErrorMessage('Name',
+        contactFormGroup.controls['telephone'].errors )}}</small>
     </div>
   </div>
 
@@ -50,7 +53,7 @@
     <!--<p>{{contactFormGroup.value|json}}</p>-->
     <div class="mb-3 mx-2">
       <label for="exampleFormControlTextarea1" class="form-label">Message *</label>
-      <textarea class="form-control col-6" id="exampleFormControlTextarea1" rows="5" formControlName = "message"></textarea>
+      <textarea class="form-control col-6" id="exampleFormControlTextarea1" rows="5" formControlName = "message" name="message"></textarea>
       <small *ngIf="contactFormGroup.controls['message'].errors  &&
         contactFormGroup.controls['message'].touched" class="text-danger">{{getErrorMessage('A message',
         contactFormGroup.controls['message'].errors )}}</small>
@@ -60,12 +63,66 @@
 
 
     </div>
-  <button type="submit" class="btn btn-outline-info mx-2  col-1 mb-3" [disabled]="!contactFormGroup.valid">Soumettre</button>
+  <button type="submit" class="btn btn-outline-info mx-2   mb-3" [disabled]="!contactFormGroup.valid">Soumettre</button>
   </form>
   </div>
 
 
 
+<!--
+ <form target="_blank"  action="https://formsubmit.co/7cec8b2434aeaac1bfde45ba611d7bea" method="POST" class="mb-3">
+<div class="card-body">
+
+  <div class="row g-3 mb-3">
+    <div class="col mx-2">
+      <label  class="form-label">Nom, Prénom *</label>
+      <input type="text" class="form-control" formControlName = "noms" name="nom complet">
+      <small *ngIf="contactFormGroup.controls['noms'].errors  &&
+        contactFormGroup.controls['noms'].touched" class="text-danger">{{getErrorMessage('Name',
+        contactFormGroup.controls['noms'].errors )}}</small>
+
+    </div>
+    <div class="col">
+
+<label  class="form-label">Email *</label>
+<input type="email" class="form-control"  formControlName = "email" name="email">
+<small *ngIf="contactFormGroup.controls['email'].errors  &&
+        contactFormGroup.controls['email'].touched" class="text-danger">{{getErrorMessage('Email',
+  contactFormGroup.controls['email'].errors )}}</small>
+</div>
+</div>
+
+<div class="row g-3 mb-3">
+  <div class="col mx-2">
+    <label  class="form-label" >Objet</label>
+    <input type="text" class="form-control" formControlName = "objet" objet="nom complet">
+  </div>
+  <div class="col">
+    <label  class="form-label">Téléphone *</label>
+    <input type="tel" class="form-control" formControlName = "telephone" name="telephone">
+    <small *ngIf="contactFormGroup.controls['telephone'].errors  &&
+        contactFormGroup.controls['telephone'].touched" class="text-danger">{{getErrorMessage('Name',
+      contactFormGroup.controls['telephone'].errors )}}</small>
+  </div>
+</div>
+
+<div class="row g-3 mb-3">
+
+  <div class="mb-3 mx-2">
+    <label for="exampleFormControlTextarea1" class="form-label">Message *</label>
+    <textarea class="form-control col-6" id="exampleFormControlTextarea1" rows="5" formControlName = "message" name="message"></textarea>
+    <small *ngIf="contactFormGroup.controls['message'].errors  &&
+        contactFormGroup.controls['message'].touched" class="text-danger">{{getErrorMessage('A message',
+      contactFormGroup.controls['message'].errors )}}</small>
+  </div>
+</div>
+
+
+
+</div>
+<button type="submit" class="btn btn-outline-info mx-2   mb-3" >Soumettre</button>
+</form>
+-->
 
 
 
