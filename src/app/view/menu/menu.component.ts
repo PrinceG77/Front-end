@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {NavigationEnd, Router} from "@angular/router";
+import {AuthenticationService} from "../../controller/services/authentication.service";
 
 @Component({
   selector: 'app-menu',
@@ -11,7 +12,7 @@ export class MenuComponent implements OnInit{
   private currentRoute: any;
 
 
-  constructor(private router : Router) {
+  constructor(private router : Router, public authService : AuthenticationService) {
 
 
 
@@ -53,5 +54,17 @@ export class MenuComponent implements OnInit{
   pageDon() {
     this.router.navigateByUrl("/dons");
     this.activePage("");
+  }
+
+  public handleLogout() {
+
+    let confirmation = confirm("Êtes-vous sûr de vouloir vous déconnecter ?");
+    if(!confirmation) return;
+
+    this.authService.logout().subscribe({
+      next : (data)=>{
+        this.router.navigateByUrl("/");
+      }
+    })
   }
 }

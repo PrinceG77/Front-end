@@ -44,6 +44,25 @@
       <li class="nav-item" [ngClass]="currentPage === '/contact'? 'active' : '' " >
         <a routerLink="/contact" class="nav-link">Contact</a>
       </li>
+
+    </ul>
+ <ul *ngIf="!authService.isAuthenticated()" class="login">
+   <li>
+     <a class="btn nav-link" routerLink="/login" >
+       <i class="fa fa-user"></i>
+     </a>
+   </li>
+ </ul>
+
+    <ul class="navbar-nav" *ngIf="authService.isAuthenticated()">
+      <li><a  class="btn nav-link username">{{this.authService.authenticatedUser.username}}</a></li>
+
+
+      <li>
+        <a class="btn nav-link" (click)="handleLogout()" >
+          <i class="fa fa-arrow-circle-o-right"></i>
+        </a>
+      </li>
     </ul>
 
     <form class="form-inline my-2 my-lg-0">

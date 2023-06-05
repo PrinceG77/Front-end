@@ -94,6 +94,19 @@ body{
   background-color: red;
 }
 
+.username:hover{
+  color: aqua !important;
+  content: '';
+  height: 2px;
+  width: 0%;
+
+
+}
+
+.login{
+  list-style: none;
+}
+
 
 /*media queries */
 @media screen and (min-width:1000px) {

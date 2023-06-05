@@ -24,7 +24,12 @@ import { HistoireComponent } from './view/histoire/histoire.component';
 import { PartenairesComponent } from './view/partenaires/partenaires.component';
 import { ServicesAdministratifsComponent } from './view/services-administratifs/services-administratifs.component';
 import { FooterPageComponent } from './view/footer-page/footer-page.component';
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import { AdminpageComponent } from './view/admin/adminpage/adminpage.component';
+import { UserListComponent } from './view/list/user-list/user-list.component';
+import { LoginComponent } from './view/login/login.component';
+import {TokenInterceptor} from "./interceptor/token.interceptor";
+import { UsersComponent } from './view/admin/users/users.component';
 
 @NgModule({
   declarations: [
@@ -48,15 +53,20 @@ import {HttpClientModule} from "@angular/common/http";
     HistoireComponent,
     PartenairesComponent,
     ServicesAdministratifsComponent,
-    FooterPageComponent
+    FooterPageComponent,
+    AdminpageComponent,
+    UserListComponent,
+    LoginComponent,
+    UsersComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

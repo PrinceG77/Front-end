@@ -19,6 +19,9 @@ import {MissionComponent} from "./view/mission/mission.component";
 import {HistoireComponent} from "./view/histoire/histoire.component";
 import {PartenairesComponent} from "./view/partenaires/partenaires.component";
 import {ServicesAdministratifsComponent} from "./view/services-administratifs/services-administratifs.component";
+import {LoginComponent} from "./view/login/login.component";
+import {AdminpageComponent} from "./view/admin/adminpage/adminpage.component";
+import {AuthenticationGuard} from "./guards/authentication.guard";
 
 const routes: Routes = [
   {path : '', component : HomepageComponent},
@@ -39,6 +42,8 @@ const routes: Routes = [
   {path : 'actualites', component : NewspageComponent},
   {path : 'contact', component : ContactpageComponent},
   {path : 'dons', component : DonspageComponent},
+  {path : 'login', component : LoginComponent},
+  {path : 'admin', component : AdminpageComponent, canActivate : [AuthenticationGuard]},
 ];
 
 @NgModule({
