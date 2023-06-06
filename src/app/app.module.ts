@@ -26,10 +26,13 @@ import { ServicesAdministratifsComponent } from './view/services-administratifs/
 import { FooterPageComponent } from './view/footer-page/footer-page.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import { AdminpageComponent } from './view/admin/adminpage/adminpage.component';
-import { UserListComponent } from './view/list/user-list/user-list.component';
 import { LoginComponent } from './view/login/login.component';
 import {TokenInterceptor} from "./interceptor/token.interceptor";
-import { UsersComponent } from './view/admin/users/users.component';
+import { UserCreateComponent } from './view/admin/user-create/user-create.component';
+import { UserListComponent } from './view/user-list/user-list.component';
+import { UserEditComponent } from './view/admin/user-edit/user-edit.component';
+
+
 
 @NgModule({
   declarations: [
@@ -55,9 +58,11 @@ import { UsersComponent } from './view/admin/users/users.component';
     ServicesAdministratifsComponent,
     FooterPageComponent,
     AdminpageComponent,
-    UserListComponent,
     LoginComponent,
-    UsersComponent,
+    UserCreateComponent,
+    UserListComponent,
+    UserEditComponent,
+
   ],
   imports: [
     BrowserModule,

@@ -22,6 +22,9 @@ import {ServicesAdministratifsComponent} from "./view/services-administratifs/se
 import {LoginComponent} from "./view/login/login.component";
 import {AdminpageComponent} from "./view/admin/adminpage/adminpage.component";
 import {AuthenticationGuard} from "./guards/authentication.guard";
+import {UserCreateComponent} from "./view/admin/user-create/user-create.component";
+import {UserListComponent} from "./view/user-list/user-list.component";
+import {UserEditComponent} from "./view/admin/user-edit/user-edit.component";
 
 const routes: Routes = [
   {path : '', component : HomepageComponent},
@@ -43,7 +46,12 @@ const routes: Routes = [
   {path : 'contact', component : ContactpageComponent},
   {path : 'dons', component : DonspageComponent},
   {path : 'login', component : LoginComponent},
-  {path : 'admin', component : AdminpageComponent, canActivate : [AuthenticationGuard]},
+
+  {path : 'admin', component : AdminpageComponent, canActivate : [AuthenticationGuard], children : [
+      {path : 'user-list', component : UserListComponent},
+      {path : 'user-create', component : UserCreateComponent},
+      {path: 'user-edit/:userId', component: UserEditComponent},
+    ]},
 ];
 
 @NgModule({

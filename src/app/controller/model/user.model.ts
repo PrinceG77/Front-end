@@ -1,8 +1,13 @@
+import {Role} from "./role.model";
+import {Validators} from "@angular/forms";
+
 export class User {
-  public id : number;
-  public name : string;
-  public email : string;
-  public  password : string;
-  public roles : string;
+  public userId: number;
+  public username: string;
+  public password: string;
+  public roleSet: Set<Role>;
+
+
+
 
 }
