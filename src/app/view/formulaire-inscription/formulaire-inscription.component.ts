@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormulaireInscriptionService} from "../../controller/services/formulaireinscription.service";
 import {FormulaireInscription} from "../../controller/model/formulaire-inscription.model";
 import {format, isValid, parse, parseISO, set} from 'date-fns';
+import {ApiResponse} from "../../controller/model/apiresponse.model";
 
 @Component({
   selector: 'app-formulaire-inscription',
@@ -42,8 +43,8 @@ export class FormulaireInscriptionComponent implements OnInit {
     console.log(this.formInscription.dateNaissance);
     console.log(this.formInscription.dateNaissance);
     this.formulaireInscriptionService.soumettreFormulaire(this.formInscription).subscribe(
-      (response: string) => {
-        alert(response); // Afficher le message de succès
+      (response: ApiResponse) => {
+        alert("Formulaire soumis avec succès"); // Afficher le message de succès
 
         // Réinitialiser le formulaire après soumission
         this.formInscription = {
