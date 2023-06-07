@@ -12,7 +12,7 @@ import { NewspageComponent } from './view/newspage/newspage.component';
 import { EventspageComponent } from './view/eventspage/eventspage.component';
 import { ContactpageComponent } from './view/contactpage/contactpage.component';
 import { DonspageComponent } from './view/donspage/donspage.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { EducationSpecifiqueComponent } from './view/education-specifique/education-specifique.component';
 import { SuiviParamedicalComponent } from './view/suivi-paramedical/suivi-paramedical.component';
 import { SoutienAccompagnementPsychiqueComponent } from './view/soutien-accompagnement-psychique/soutien-accompagnement-psychique.component';
@@ -31,6 +31,9 @@ import {TokenInterceptor} from "./interceptor/token.interceptor";
 import { UserCreateComponent } from './view/admin/user-create/user-create.component';
 import { UserListComponent } from './view/user-list/user-list.component';
 import { UserEditComponent } from './view/admin/user-edit/user-edit.component';
+import { FormulaireInscriptionComponent } from './view/formulaire-inscription/formulaire-inscription.component';
+import {CommonModule} from "@angular/common";
+import {ListeFormulairesComponent} from "./view/listes-formulaires/listes-formulaires.component";
 
 
 
@@ -62,6 +65,8 @@ import { UserEditComponent } from './view/admin/user-edit/user-edit.component';
     UserCreateComponent,
     UserListComponent,
     UserEditComponent,
+    FormulaireInscriptionComponent,
+    ListeFormulairesComponent
 
   ],
   imports: [
@@ -69,7 +74,9 @@ import { UserEditComponent } from './view/admin/user-edit/user-edit.component';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CommonModule,
+    FormsModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },],
   bootstrap: [AppComponent]

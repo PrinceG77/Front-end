@@ -25,6 +25,10 @@ import {AuthenticationGuard} from "./guards/authentication.guard";
 import {UserCreateComponent} from "./view/admin/user-create/user-create.component";
 import {UserListComponent} from "./view/user-list/user-list.component";
 import {UserEditComponent} from "./view/admin/user-edit/user-edit.component";
+import {ListeFormulairesComponent} from "./view/listes-formulaires/listes-formulaires.component";
+import {FormulaireInscriptionComponent} from "./view/formulaire-inscription/formulaire-inscription.component";
+//import {FormulaireInscriptionComponent} from "./view/formulaire-inscription/formulaire-inscription.component";
+//import {ListeFormulairesComponent} from "./view/listes-formulaires/listes-formulaires.component";
 
 const routes: Routes = [
   {path : '', component : HomepageComponent},
@@ -46,6 +50,9 @@ const routes: Routes = [
   {path : 'contact', component : ContactpageComponent},
   {path : 'dons', component : DonspageComponent},
   {path : 'login', component : LoginComponent},
+  {path : 'inscription', component : FormulaireInscriptionComponent},
+  {path : 'liste-forms', component : ListeFormulairesComponent},
+
 
   {path : 'admin', component : AdminpageComponent, canActivate : [AuthenticationGuard], children : [
       {path : 'user-list', component : UserListComponent},

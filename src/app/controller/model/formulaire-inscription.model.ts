@@ -1,13 +1,12 @@
 export class FormulaireInscription {
-  public id : number;
-  public name : string;
-  public dateNaissance : Date;
-  public adresse : string;
-  public contact : string;
-  public typeHandicap : string;
-  public besoins : string;
-  public dateSoumission : Date;
-
-  public isProcessed : boolean;
-  public isValidated : boolean;
+  id: number;
+  nom: string;
+  dateNaissance: string; // Utiliser le type 'string' au lieu de 'Date'
+  adresse: string;
+  contact: string;
+  typeHandicap: string;
+  besoins: string;
+  dateSoumission: string; // Utiliser le type 'string' au lieu de 'Date'
+  isProcessed: boolean;
+  isValidated: boolean;
 }

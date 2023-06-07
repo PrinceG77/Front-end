@@ -1,0 +1,38 @@
+<h2>Formulaire d'inscription</h2>
+
+<form (ngSubmit)="soumettreFormulaire()">
+  <div>
+    <label for="nom">Nom :</label>
+    <input type="text" id="nom" [(ngModel)]="formInscription.nom" name="nom" required autocomplete="off">
+  </div>
+  <div>
+    <label for="dateNaissance">Date de naissance :</label>
+    <input type="date" id="dateNaissance" [(ngModel)]="formInscription.dateNaissance" name="dateNaissance" required>
+  </div>
+  <div>
+    <label for="adresse">Adresse :</label>
+    <input type="text" id="adresse" [(ngModel)]="formInscription.adresse" name="adresse" required>
+  </div>
+  <div>
+    <label for="contact">Contact :</label>
+    <input type="text" id="contact" [(ngModel)]="formInscription.contact" name="contact" required>
+  </div>
+  <div>
+    <label for="typeHandicap">Type de handicap :</label>
+    <select id="typeHandicap" [(ngModel)]="formInscription.typeHandicap" name="typeHandicap" required>
+      <option value="">Sélectionnez un type de handicap</option>
+      <!-- Options pour les types de handicap prédéfinis -->
+      <option value="Autisme">Autisme</option>
+      <option value="Retard Mental">Retard Mental</option>
+      <option value="Surdité">Surdité</option>
+      <option value="Malvoyance">Malvoyance</option>
+      <option value="Motricité">Motricité</option>
+    </select>
+  </div>
+  <div>
+    <label for="besoins">Besoins :</label>
+    <textarea id="besoins" [(ngModel)]="formInscription.besoins" name="besoins" required></textarea>
+  </div>
+  <button type="submit">Soumettre</button>
+</form>
+

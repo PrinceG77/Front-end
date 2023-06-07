@@ -1,0 +1,27 @@
+<h1 class="text-center">Liste des utilisateurs</h1>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th>Username</th>
+    <th>Password</th>
+    <th>Rôles</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let user of users">
+    <td>{{ user.userId }}</td>
+    <td>{{ user.username }}</td>
+    <td>{{ user.password }}</td>
+    <td><span (click)="deleteById(user.userId);" class="btn btn-sm btn-danger fa fa-trash"
+              ></span>
+
+      <span  class="btn btn-sm btn-primary fa fa-edit mx-3" (click)="update(user.userId)" ></span>
+    <td>
+      <ul>
+        <li *ngFor="let role of user.roleSet">{{ role.name }}</li>
+      </ul>
+    </td>
+  </tr>
+  </tbody>
+</table>

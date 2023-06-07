@@ -1,0 +1,25 @@
+<h1 class="mb-4 text-center">Ajouter un utilisateur</h1>
+
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="form-container">
+  <div class="form-group">
+    <label for="username" class="form-label">Username:</label>
+    <input type="text" id="username" class="form-control" formControlName="username" required>
+  </div>
+
+  <div class="form-group">
+    <label for="password" class="form-label">Password:</label>
+    <input type="password" id="password" class="form-control" formControlName="password" required>
+  </div>
+
+  <div class="form-group">
+    <label for="roles" class="form-label">Roles:</label>
+    <select id="roles" class="form-select" formControlName="roles" multiple>
+      <option value="ADMIN">ADMIN</option>
+      <option value="BENEFICIAIRE">BENEFICIAIRE</option>
+      <option value="SECRETAIRE">SECRETAIRE</option>
+      <!-- Ajoutez d'autres options de rôle ici -->
+    </select>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
