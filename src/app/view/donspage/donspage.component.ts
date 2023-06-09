@@ -1,5 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, ValidationErrors, Validators} from "@angular/forms";
+import {DonService} from "../../controller/services/don.service";
+import {Don} from "../../controller/model/don.model";
+import {format, parse} from "date-fns";
+import {ApiResponse} from "../../controller/model/apiresponse.model";
 
 @Component({
   selector: 'app-donspage',
@@ -8,7 +12,7 @@ import {FormBuilder, FormGroup, ValidationErrors, Validators} from "@angular/for
 })
 export class DonspageComponent implements OnInit{
   donFormGroup! : FormGroup;
-  constructor(private fb : FormBuilder) {
+  constructor(private fb : FormBuilder, private donService: DonService) {
 
     this.donFormGroup = this.fb.group({
       noms : this.fb.control(null , [Validators.required]),
@@ -26,7 +30,50 @@ export class DonspageComponent implements OnInit{
   }
 
   sendDonationForm() {
+    if (this.donFormGroup.invalid) {
+      return;
+    }
+
+    const formValues = this.donFormGroup.value;
+    const don: Don = {
+      id: null,
+      nomDonateur: formValues.noms,
+      email: formValues.email,
+      adresse: formValues.adresse,
+      telephone: formValues.telephone,
+      codePostal: formValues.codePostal,
+      montant: formValues.montantDon,
+      villeDonateur: formValues.ville,
+      paysDonateur: formValues.pays,
+      date: format(new Date(), 'dd/MM/yyyy')
+    };
+
+    const dateSoumission = new Date();
+    don.date = format(dateSoumission, 'dd/MM/yyyy HH:mm:ss');
+
+    this.donService.saveDonInfos(don).subscribe(
+      (response : ApiResponse) => {
+        // Gère la réponse du backend si nécessaire
+        alert('Don enregistré avec succès');
+      },
+      (error) => {
+        // Gère les erreurs de l'appel au backend
+        console.error('Erreur lors de l\'enregistrement du don:', error);
+      }
+    );
+
     this.donFormGroup.reset();
+
+    const montantDon = this.donFormGroup.value.montantDon;
+
+    // ...
+
+    this.redirectToPayPal(montantDon);
+  }
+
+  redirectToPayPal(amount: number) {
+    const paypalUrl = `https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=princemalere7@gmail.com&currency_code=USD&amount=${amount}`;
+    window.location.href = paypalUrl;
   }
 
   public getErrorMessage( errors: ValidationErrors) : any{
