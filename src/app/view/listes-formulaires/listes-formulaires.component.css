@@ -14,3 +14,15 @@ button {
   font-size: 16px;
   cursor: pointer;
 }
+
+button:hover {
+ background-color: aqua;
+}
+
+.container{
+  font-family: Righteous;
+  margin-bottom: 1%;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 1% 0;
+}

@@ -61,6 +61,7 @@ export class AuthenticationService {
   }
 
   public hasRole(role: any) : boolean{
+    this.authenticatedUser = JSON.parse(localStorage.getItem('authUser'));
     return this.authenticatedUser.roles.includes(role);
   }
 

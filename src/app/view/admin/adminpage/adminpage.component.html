@@ -1,29 +1,32 @@
 <div class="container">
   <h1 class="text-center">Page Administrateur</h1>
-  <div class="row">
-    <div class="col offset-md-3" routerLink="/admin/user-list">
-      <button class="btn btn-primary">Afficher utilisateurs</button>
+  <div class="buttons">
+    <div class="row mt-5">
+      <div class="col" routerLink="/admin/user-list">
+        <button class="btn btn-primary">Afficher utilisateurs</button>
+      </div>
+      <div class="col">
+        <button class="btn btn-primary">Afficher informations dons</button>
+      </div>
+      <div class="col">
+        <button class="btn btn-primary">Afficher services</button>
+      </div>
     </div>
-    <div class="col">
-      <button class="btn btn-primary">Afficher informations dons</button>
+
+    <div class="row my-5">
+      <div class="col">
+        <button class="btn btn-success" (click)="addUser()">Ajouter utilisateur</button>
+      </div>
+      <div class="col">
+        <button class="btn btn-success">Ajouter événement</button>
+      </div>
+      <div class="col ">
+        <button class="btn btn-success">Ajouter information centre</button>
+      </div>
     </div>
-    <div class="col">
-      <button class="btn btn-primary">Afficher services</button>
-    </div>
+  </div>
   </div>
 
-  <div class="row my-5">
-    <div class="col-3 offset-md-2 mx-2">
-      <button class="btn btn-success" (click)="addUser()">Ajouter utilisateur</button>
-    </div>
-    <div class="col-3 mx-2">
-      <button class="btn btn-success">Ajouter événement</button>
-    </div>
-    <div class="col-3 mx-2">
-      <button class="btn btn-success">Ajouter information centre</button>
-    </div>
-  </div>
-</div>
 
 <div class="container">
   <router-outlet></router-outlet>

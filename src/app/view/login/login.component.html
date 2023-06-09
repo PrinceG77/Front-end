@@ -4,17 +4,17 @@
     <div class="card-body">
       <div class="mb-3 text-danger" *ngIf="errorMessage">{{errorMessage}}</div>
       <form [formGroup]="searchFormGroup" (ngSubmit)="handleLogin()" class="form-group">
-        <div class="mb-3">
-          <label class="form-label">Nom d'utilisateur</label>
-          <input type="text" formControlName = "username" class="form-control">
+        <div class="input-group mb-4">
+          <span class="input-group-text fa fa-user" ></span>
+          <input type="text" class="form-control" placeholder="Nom d'utilisateur" formControlName = "username" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
 
-        <div class="mb-3">
-          <label class="form-label">Mot de passe</label>
-          <input type="password" formControlName = "password" class="form-control">
+        <div class="input-group mb-4">
+          <span class="input-group-text fa fa-lock" ></span>
+          <input type="password" class="form-control" placeholder="Mot de passe" formControlName = "password" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
 
-        <button type="submit" class="btn btn-outline-primary">Login</button>
+        <button type="submit" class="btn btn-outline-secondary">Connexion</button>
 
       </form>
     </div>

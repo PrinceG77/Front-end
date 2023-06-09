@@ -9,7 +9,7 @@ import {AuthenticationService} from "./controller/services/authentication.servic
 export class AppComponent implements OnInit{
   title = 'Front-end';
 
-  constructor(private authService : AuthenticationService) {
+  constructor(public authService : AuthenticationService) {
   }
 
   ngOnInit(): void {

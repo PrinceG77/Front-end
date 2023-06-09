@@ -1,5 +1,6 @@
 .container {
   margin-top: 50px;
+  font-family: Righteous;
 }
 
 .text-center {
@@ -27,4 +28,10 @@
 .btn-primary {
   background-color: #007bff;
   color: #fff;
+}
+.buttons{
+  border-radius: 10px;
+  border: 2px solid black;
+  padding-left: 10px;
+  padding-right: 10px;
 }
