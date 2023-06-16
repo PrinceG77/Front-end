@@ -4,6 +4,7 @@ import {DonService} from "../../controller/services/don.service";
 import {Don} from "../../controller/model/don.model";
 import {format, parse} from "date-fns";
 import {ApiResponse} from "../../controller/model/apiresponse.model";
+import {PaypalService} from "../../controller/services/paypal.service";
 
 @Component({
   selector: 'app-donspage',
@@ -12,7 +13,7 @@ import {ApiResponse} from "../../controller/model/apiresponse.model";
 })
 export class DonspageComponent implements OnInit{
   donFormGroup! : FormGroup;
-  constructor(private fb : FormBuilder, private donService: DonService) {
+  constructor(private fb : FormBuilder, private donService: DonService, private  paypalService : PaypalService) {
 
     this.donFormGroup = this.fb.group({
       noms : this.fb.control(null , [Validators.required]),
@@ -68,13 +69,21 @@ export class DonspageComponent implements OnInit{
 
     // ...
 
-    this.redirectToPayPal(montantDon);
+    this.paypalService.requestPayment(montantDon).subscribe(
+      (response) => {
+        // Traitez la réponse de la demande de paiement
+        console.log(response);
+        // Redirigez l'utilisateur vers la page de paiement PayPal
+        window.location.href = response.redirectUrl;
+      },
+      (error) => {
+        // Gérez les erreurs de la demande de paiement
+        console.error(error);
+      }
+    );
   }
 
-  redirectToPayPal(amount: number) {
-    const paypalUrl = `https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=princemalere7@gmail.com&currency_code=USD&amount=${amount}`;
-    window.location.href = paypalUrl;
-  }
+
 
   public getErrorMessage( errors: ValidationErrors) : any{
     if(errors['required']){
