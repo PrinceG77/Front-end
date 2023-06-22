@@ -1,10 +1,11 @@
 .contact-title{
   font-size: 3.1em;
-  font-family: 'Times New Roman';
+  font-family: 'Righteous';
 }
 
 p{
-  font-family: 'Times New Roman';
+  font-family: 'Ink Free';
+  font-weight: bold;
   margin-left: 2%;
 }
 form{

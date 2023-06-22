@@ -1,12 +1,13 @@
 fieldset, legend {
   all: revert;
-  font-family: "Ink Free";
-  font-weight: bold;
+  font-family: "Righteous";
+  /*font-weight: bold;*/
 }
 
 legend {
 
-
+  font-family: "Ink Free";
+  font-weight: bold;
   font-size: 2.5rem;
   padding-left: 20px;
   padding-right: 20px;
@@ -15,5 +16,27 @@ legend {
 
 button{
   font-family: "Ink Free";
+}
+
+.title-don{
+  font-family: Righteous;
+  margin-top: 100px;
+  margin-bottom: 25px;
+}
+
+.virement-don{
+  border: 2px solid red;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  display: flex;
+  padding: 20px;
+  justify-content: space-around;
+  margin-left: auto;
+}
+
+.virement-don h2{
+  font-size: 1.5em;
+  color: #4CAF50;
+  font-family: Righteous;
 }
 
